@@ -4,10 +4,17 @@
 <head>
     <title>Python Flask Bucket List App</title>
  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
  
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
  
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <script src="./static/js/form.js"></script>
  
  
 </head>
@@ -16,15 +23,20 @@
  
     <div class="container">
         <div class="header">
-            <!-- <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
-                    </li>
-                    <li role="presentation"><a href="#">Sign In</a>
-                    </li>
-                    <li role="presentation"><a href="showSignUp">Sign Up</a>
-                    </li>
-                </ul>
+           <form action="/notes/create" method="POST">
+    <label>Date</label>
+    <input type="text" name="date" id="Date">
+
+    <label>Time</label>
+    <input type="text" name="time" id="Time">
+
+    <label>Description</label>
+    <input type="text" name="description" id="Description">
+
+    <input type="submit" id="Submiet" value="Create">
+</form>
+
+        </div>
             </nav> -->
             <h3 class="text-muted">Python Flask App</h3>
         </div>
@@ -46,9 +58,9 @@
           <div class="col-md-6">
                 <form class="navbar-form navbar-left" >
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q">
+          <input type="text" id="search" class="form-control" placeholder="Search" name="q">
 
-          <button type="submit" class="btn btn-success" style="padding: 3px 10px;">Search</button>
+          <button type="submit" class="btn btn-success" id="getappointments" style="padding: 3px 10px;">Search</button>
         </div>
        
 
@@ -70,7 +82,8 @@
     <th style="width:40%;">Time</th>
     <th style="width:40%;">Description</th>
   </tr>
-  <tr>
+  <tr id="appointments">
+
    <!--  <td>Alfreds Futterkiste</td>
     <td>Germany</td>
   </tr>
@@ -115,29 +128,28 @@
 
  <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
 
- <script>
+ <script type="text/javascript">
+
+// var db = openDatabase('Note', '1.0', 'Appointment Search', 10 );
+
+// db.transaction(function (tx) {
+//    tx.executeSql('CREATE TABLE IF NOT EXISTS note (Date, Time, Appointment)');
+//   tx.executeSql('INSERT INTO note (Date, Time, Appointment) VALUES (March 23, "10:00 am", "Product Demo for Bergen Promise")');
+//   tx.executeSql('INSERT INTO note (Date, Time, Appointment) VALUES ("March 21" , "2:00 pm", "Proposal for Aetos Capital")');
+//     tx.executeSql('INSERT INTO note (Date, Time, Appointment) VALUES ("March 24", "3:30 pm", "Benefits Proposal for Bytemark Inc")');
+// });
 
 
-$('.btn btn-success').on('click', function(event){
-        // This line of code will grab the input from the textbox
-        var appointments = [];
-        var appointmentSearch = $('.form-control').val().trim();
-        appointments.push(appointmentSearch);
- var db = openDatabase('Note');
-   db.transaction(function(tx) {
+// console.log(db);
 
-   tx.executeSql('SELECT * FROM note', [], function (tx, results) {
-  var len = results.rows.length, i;
-  for (i = 0; i < len; i++) {
-    alert(results.rows.item(i).text);
-  }
-});
+// $('.btn btn-success').on('click', function(event){
+      
+//     });
 
-    });
-   
-   })
 
- </script>
+</script>
+
+
 
 </body>
  

@@ -1,9 +1,13 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import os
+import requests
+import json
 
 
 app = Flask(__name__)
+
+app.secret_key = os.urandom(24)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
@@ -20,11 +24,13 @@ class Note(db.Model):
 def home():
     return render_template("home.html")
 
-@app.route("/notes/create", methods=["GET", "POST"])
+@app.route("/process", methods=["GET", "POST"])
 def create_note():
-    if request.method == "GET":
+
+
+  if request.method == "GET":
         return render_template("create_note.html")
-    else:
+  else:
         date = request.form["date"]
         time = request.form["time"]
         description = request.form["description"]
@@ -34,7 +40,11 @@ def create_note():
         db.session.add(note)
         db.session.commit()
 
-        return redirect("/notes/create")
+        return jsonify({'note' : note})
+
+
+        # return redirect("/notes/create")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

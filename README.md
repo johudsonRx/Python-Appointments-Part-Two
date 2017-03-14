@@ -1,7 +1,7 @@
 # Python-Flask Appointments
 An application that allows users to search for appointments that they have scheduled.
 
-##Technologies Used:
+## Technologies Used:
 jQuery
 Bootstrap
 HTML
@@ -10,14 +10,14 @@ JSON
 SQLite3
 Python v 2.7.13
 
-##Dependencies:
+## Dependencies:
 flask - request, redirect, sjonify
 flask_sqlalchemy - SQLAlchemy
 requests
 jsonify
 os
 
-##Steps:
+## Steps:
 
 1. Clone or download repo: https://github.com/johudsonRx/Python-Appointments-Part-Two
 
@@ -27,7 +27,7 @@ os
 
 4. Run **python main.py** in the terminal and then type in localhost://5000 in your browser to access the app.
 
-##Future Tasks
+## Future Tasks
 
 
 - [ ] Add an authentication method to get users to see appointments specific to them

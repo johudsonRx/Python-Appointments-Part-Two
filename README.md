@@ -25,7 +25,7 @@ An application that allows users to search for appointments that they have sched
 
 3. Run a **pip install (name of dependency)** on all of dependencies that you don't have installed in your terminal.
 
-4. Run **python main.py** in the terminal and then type in localhost://5000 in your browser to access the app.
+4. Run **python main.py** in the terminal and then type in localhost:5000 in your browser to access the app.
 
 ## Future Tasks
 

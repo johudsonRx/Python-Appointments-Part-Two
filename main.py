@@ -28,19 +28,16 @@ def home():
 def create_note():
 
 
-  if request.method == "GET":
-        return render_template("create_note.html")
-  else:
-        date = request.form["date"]
-        time = request.form["time"]
-        description = request.form["description"]
+    date = request.form["date"]
+    time = request.form["time"]
+    description = request.form["description"]
 
-        note = Note(date=date, time=time, description=description)
+    note = Note(date=date, time=time, description=description)
 
-        db.session.add(note)
-        db.session.commit()
+    db.session.add(note)
+    db.session.commit()
 
-        return jsonify({'note' : note})
+    return jsonify({'note' : note})
 
 
         # return redirect("/notes/create")

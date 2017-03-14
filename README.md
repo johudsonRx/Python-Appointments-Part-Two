@@ -2,20 +2,20 @@
 An application that allows users to search for appointments that they have scheduled.
 
 ## Technologies Used:
-jQuery
-Bootstrap
-HTML
-AJAX
-JSON
-SQLite3
-Python v 2.7.13
+* jQuery
+* Bootstrap
+* HTML
+* AJAX
+* JSON
+* SQLite3
+* Python v 2.7.13
 
 ## Dependencies:
-flask - request, redirect, sjonify
-flask_sqlalchemy - SQLAlchemy
-requests
-jsonify
-os
+* flask - request, redirect, sjonify
+* flask_sqlalchemy - SQLAlchemy
+* requests
+* jsonify
+* os
 
 ## Steps:
 
